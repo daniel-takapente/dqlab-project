@@ -18,14 +18,6 @@ sepal_length = st.slider('Panjang Sepal', min_value=0.0, max_value=10.0, value=5
 sepal_width = st.slider('Lebar Sepal', min_value=0.0, max_value=10.0, value=3.0)
 petal_length = st.slider('Panjang Petal', min_value=0.0, max_value=10.0, value=1.5)
 petal_width = st.slider('Lebar Petal', min_value=0.0, max_value=10.0, value=0.3)
-sepal_length = st.slider('Panjang Sepal', min_value=0.0, max_value=10.0, value=5.0)
-sepal_width = st.slider('Lebar Sepal', min_value=0.0, max_value=10.0, value=3.0)
-petal_length = st.slider('Panjang Petal', min_value=0.0, max_value=10.0, value=1.5)
-petal_width = st.slider('Lebar Petal', min_value=0.0, max_value=10.0, value=0.3)
-sepal_length = st.slider('Panjang Sepal', min_value=0.0, max_value=10.0, value=5.0)
-sepal_width = st.slider('Lebar Sepal', min_value=0.0, max_value=10.0, value=3.0)
-petal_length = st.slider('Panjang Petal', min_value=0.0, max_value=10.0, value=1.5)
-petal_width = st.slider('Lebar Petal', min_value=0.0, max_value=10.0, value=0.3)
 
 # Tombol untuk menjalankan prediksi
 if st.button('Prediksi'):
