@@ -1,24 +1,17 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
-from sklearn.preprocessing import StandardScaler, LabelEncoder
-from sklearn.ensemble import GradientBoostingClassifier
 import joblib
+import numpy as np
 
-# Load the trained model and scaler
+# Load model dari file .pkl
 model = joblib.load('bank_model.pkl')
-scaler = joblib.load('scaler.pkl')
 
-# Define the prediction function
+# Fungsi prediksi
 def predict(input_data):
-    # Scale the input data
-    input_scaled = scaler.transform(np.array(input_data).reshape(1, -1))  # Make it 2D
-    # Use the model to make a prediction
-    prediction = model.predict(input_scaled)
+    prediction = model.predict([input_data])
     return prediction
 
-# Create the Streamlit user interface
-st.title("Bank Marketing Prediction App")
+# Judul aplikasi
+st.title("Prediksi Potensial Nasabah Melalui Direct Marketing")
 col1, col2 = st.columns(2)
 
 with col1:
@@ -41,18 +34,10 @@ with col2:
 	poutcome = st.selectbox('Hasil Kampanye marketing sebelumnya', 
 	                         ['failure', 'nonexistent', 'success'])
 
-
-# Collect input data into a list
-input_data = [age, job, marital, education, default, housing, loan, contact, month, 
-              day_of_week, duration, poutcome]
-
-# Button to trigger prediction
-if st.button('Predict'):
-    # Make a prediction
-    prediction = predict(input_data)
-    
-    # Map the prediction to "Yes" or "No"
-    if prediction[0] == 1:
-        st.write('Prediction: Yes, the user is likely to subscribe to a term deposit.')
-    else:
-        st.write('Prediction: No, the user is unlikely to subscribe to a term deposit.')
+# Tombol untuk menjalankan prediksi
+if st.button('Prediksi'):
+    # Membuat array input
+    input_data = [sepal_length, sepal_width, petal_length, petal_width]
+    # Melakukan prediksi
+    result = predict(input_data)
+    st.write(f"Hasil Prediksi: {result}")
