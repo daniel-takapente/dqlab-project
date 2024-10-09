@@ -7,7 +7,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.decomposition import PCA
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 import joblib
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 # Load Data
 url = 'bank-additional-full.csv'
@@ -75,7 +75,7 @@ X_test_scaled = scaler.transform(X_test)
 pca = PCA(n_components=0.95, random_state=42)
 X_train_pca = pca.fit_transform(X_train_scaled)
 X_test_pca = pca.transform(X_test_scaled)
-
+"""
 # Plot the first two principal components
 plt.figure(figsize=(10, 7))
 plt.scatter(X_train_pca[:, 0], X_train_pca[:, 1], c=y_train, cmap='viridis', alpha=0.5)
@@ -85,7 +85,7 @@ plt.ylabel('Principal Component 2')
 plt.colorbar(label='Target')
 plt.grid(True)
 plt.show()
-
+"""
 # Initialize models
 models = {
     "Random Forest": RandomForestClassifier(random_state=42),
