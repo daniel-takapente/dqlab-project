@@ -3,7 +3,7 @@ import joblib
 import numpy as np
 
 # Load model dari file .pkl
-model = joblib.load('model.pkl')
+model = joblib.load('bank_model.pkl')
 
 # Fungsi prediksi
 def predict(input_data):
