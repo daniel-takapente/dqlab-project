@@ -7,7 +7,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.decomposition import PCA
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 import joblib
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 # Load Data
 url = 'bank-additional-full.csv'
