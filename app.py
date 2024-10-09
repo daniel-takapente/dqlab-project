@@ -37,7 +37,8 @@ with col2:
 # Tombol untuk menjalankan prediksi
 if st.button('Prediksi'):
     # Membuat array input
-    input_data = [sepal_length, sepal_width, petal_length, petal_width]
+    input_data = [age, job, marital, education, default, housing, loan, contact, month, 
+              day_of_week, duration, poutcome]
     # Melakukan prediksi
     result = predict(input_data)
     st.write(f"Hasil Prediksi: {result}")
