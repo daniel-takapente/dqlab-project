@@ -9,7 +9,7 @@ scaler = joblib.load('scaler.pkl')
 # Function for prediction
 def predict(input_data):
     # Scale the input data
-    input_scaled = scaler.transform([input_data])
+    input_scaled = scaler.transform(np.array(input_data).reshape(1, -1))
     # Use the model to make a prediction
     prediction = model.predict(input_scaled)
     return prediction
